@@ -75,8 +75,6 @@ func (ws *Wallets) LoadFromFile() error {
 func (ws Wallets) SaveToFile() {
 	var content bytes.Buffer
 
-	gob.Register(elliptic.P256())
-
 	encoder := gob.NewEncoder(&content)
 	err := encoder.Encode(ws)
 	if err != nil {
