@@ -1,7 +1,7 @@
 # Custom Ignore
 blockchain_practice
 *.db
-wallet.dat
+*.dat
 
 # Binaries for programs and plugins
 *.exe

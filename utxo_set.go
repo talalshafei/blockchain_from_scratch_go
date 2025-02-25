@@ -137,6 +137,9 @@ func (u UTXOSet) Reindex() {
 
 		return nil
 	})
+	if err != nil {
+		log.Panic(err)
+	}
 }
 
 func (u UTXOSet) Update(block *Block) {
@@ -174,9 +177,7 @@ func (u UTXOSet) Update(block *Block) {
 			}
 
 			newOutputs := TXOutputs{}
-			for _, out := range tx.Vout {
-				newOutputs.Outputs = append(newOutputs.Outputs, out)
-			}
+			newOutputs.Outputs = append(newOutputs.Outputs, tx.Vout...)
 
 			err := b.Put(tx.ID, newOutputs.Serialize())
 			if err != nil {
