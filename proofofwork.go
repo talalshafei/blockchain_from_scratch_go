@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	targetBits = 24
+	targetBits = 16
 	maxNonce   = math.MaxInt64
 )
 
