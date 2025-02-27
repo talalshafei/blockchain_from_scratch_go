@@ -42,7 +42,7 @@ func DeserializeBlock(d []byte) *Block {
 	decoder := gob.NewDecoder(bytes.NewReader(d))
 	err := decoder.Decode(&block)
 	if err != nil {
-		log.Panicf("Couldn't Serialize block: %v", err)
+		log.Panicf("Couldn't Deserialize block: %v", err)
 	}
 	return &block
 }
